@@ -1,3 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+*::selection {
+  background: #ff8da1; /* WebKit/Blink Browsers */
+}
+
+*::-moz-selection {
+  background: #ff8da1; /* Gecko Browsers */
+}
+
+a:hover, a:focus {
+text-decoration: none !important;
+}
+p { margin: 0; }
+
+@font-face {
+  font-family: Patua;
+  src: url("fonts/Patua-One.woff2") format('woff');
+}
+
+@font-face {
+  font-family: Uni Sans T;
+  src: url("fonts/Uni Sans Thin.otf");
+}
+
+@font-face {
+  font-family: Uni Sans TI;
+  src: url("fonts/Uni Sans Thin Italic.otf");
+}
+
+@font-face {
+  font-family: Uni Sans H;
+  src: url("fonts/Uni Sans Heavy.otf");
+}
+
+@font-face {
+  font-family: Uni Sans HI;
+  src: url("fonts/Uni Sans Heavy Italic.otf");
+}
+
+@font-face {
+  font-family: WhitneyHTF-M;
+  src: url("fonts/WhitneyHTF-Medium.ttf");
+}
+
+@font-face {
+  font-family: WhitneyHTF-MISC;
+  src: url("fonts/WhitneyHTF-MediumItalicSC.otf");
+}
+
+@font-face {
+  font-family: WhitneyHTF-BI;
+  src: url("fonts/WhitneyHTF-BookItalic.otf");
+}
+
+@font-face {
+  font-family: WhitneyHTF-B;
+  src: url("fonts/WhitneyHTF-Bold.otf");
+}
+
+@font-face {
+  font-family: Fira Sans;
+  src: url("fonts/FiraSans-Regular.otf");
+}
+
+
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: url("/images/background.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  padding-bottom: 20px;
+}
+
 .module-name.selected{
   color:red;
 }

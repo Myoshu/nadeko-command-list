@@ -1,10 +1,13 @@
 {
   "name": "nadeko-cmd-list",
+  "author": "Kwoth",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts-ts": "2.8.0"
   },
   "scripts": {
@@ -17,6 +20,8 @@
     "@types/jest": "^22.0.1",
     "@types/node": "^9.3.0",
     "@types/react": "^16.0.34",
-    "@types/react-dom": "^16.0.3"
+    "@types/react-dom": "^16.0.3",
+    "@types/react-router": "^4.0.20",
+    "@types/react-router-dom": "^4.2.3"
   }
 }
