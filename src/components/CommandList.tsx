@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './CommandList.css';
-
-
+import * as Marked from 'marked';
+Marked.Renderer.prototype.paragraph = (x) => x;
 interface CommandData {
     Aliases: string[],
     Description: string,
-    Usage: string
+    Usage: string[]
 }
 interface State {
     data: any,
@@ -37,6 +37,14 @@ export default class CommandList extends React.Component<{}, State> {
         return '';
     }
 
+    getRows(input: string[]): JSX.Element[] {
+        const usages: JSX.Element[] = [];
+        input.forEach(x => {
+            usages.push(<div className="cell-part">{x}</div>);
+        });
+        return usages;
+    }
+
     render() {
         if (this.state == null)
             return <div>Loading...</div>;
@@ -56,11 +64,18 @@ export default class CommandList extends React.Component<{}, State> {
 
         return (
             <div>
-                <div className="modules-wrap">
-                    <h2>Filter by Module</h2>
-
-                    <div className="modules">
-                        {modules}
+                <div className="command-list-header">
+                    <div className="cmd-top-part search-wrap">
+                        <h2>Search</h2>
+                        <div className="modules">
+                            <input type="text" />
+                        </div>
+                    </div>
+                    <div className="cmd-top-part modules-wrap">
+                        <h2>Filter by Module</h2>
+                        <div className="modules">
+                            {modules}
+                        </div>
                     </div>
                 </div>
                 <div className="commands">
@@ -72,13 +87,13 @@ export default class CommandList extends React.Component<{}, State> {
                         <p>Aliases</p>
                     </div>
                     {cmds.map((x: CommandData) =>
-                    <div className='command' key={x.Aliases[0]}>
-                        <div className='command-name'>{x.Aliases[0]}</div>
-                        <div className='module'></div>
-                        <div className='description'>{x.Description}</div>
-                        <div className='usage'>{x.Usage}</div>
-                        <div className='aliases'></div>
-                    </div>)}
+                        <div className='command' key={x.Aliases[0]}>
+                            <div className='command-name'>.{x.Aliases[0]}</div>
+                            <div className='module'></div>
+                            <div className='description' dangerouslySetInnerHTML={{ __html: Marked.parse(x.Description) }}></div>
+                            <div className='usage'>{this.getRows(x.Usage)}</div>
+                            <div className='aliases'>{this.getRows(x.Aliases.filter((v, i) => i != 0))}</div>
+                        </div>)}
                 </div>
             </div>
         );
