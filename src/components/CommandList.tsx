@@ -56,12 +56,30 @@ export default class CommandList extends React.Component<{}, State> {
 
         return (
             <div>
-                <div className="modules">{modules}</div>
-                <div className="commands">{cmds.map((x: CommandData) => <div className='command' key={x.Aliases[0]}>
-                    <div className='aliases'>{x.Aliases[0]}</div>
-                    <div className='description'>{x.Description}</div>
-                    <div className='usage'>{x.Usage}</div>
-                </div>)}</div>
+                <div className="modules-wrap">
+                    <h2>Filter by Module</h2>
+
+                    <div className="modules">
+                        {modules}
+                    </div>
+                </div>
+                <div className="commands">
+                    <div className="commands-header">
+                        <p>Command Name</p>
+                        <p>Module</p>
+                        <p>Description</p>
+                        <p>Usage</p>
+                        <p>Aliases</p>
+                    </div>
+                    {cmds.map((x: CommandData) =>
+                    <div className='command' key={x.Aliases[0]}>
+                        <div className='command-name'>{x.Aliases[0]}</div>
+                        <div className='module'></div>
+                        <div className='description'>{x.Description}</div>
+                        <div className='usage'>{x.Usage}</div>
+                        <div className='aliases'></div>
+                    </div>)}
+                </div>
             </div>
         );
     }
