@@ -1,0 +1,90 @@
+@font-face {
+    font-family: UniNeue;
+    font-weight: 400;
+    src: url("../fonts/UniNeueRegular.otf");
+}
+@font-face {
+    font-family: UniNeue;
+    font-weight: 700;
+    src: url("../fonts/UniNeueBold.otf");
+}
+
+html {
+    font-size: 16px;
+}
+
+/*MODULES*/
+.modules-wrap {
+    align-items: center;
+    display: flex;
+    padding: 10px 20px;
+}
+
+.modules-wrap h2 {
+    align-self: center;
+    color: #484848;
+    display: inline-block;
+    font-family: "UniNeue", sans-serif;
+    font-weight: 700;
+    margin: -10px 40px 0 0;
+}
+
+.modules {
+    display: inline-block;
+}
+
+.module-name {
+    border: 2px solid #E7EDEF;
+    color: #B3B3B3;
+    cursor: pointer;
+    font-family: "UniNeue", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-block;
+    margin: 0 16px 10px 0;
+    padding: 7.5px 9.5px;
+}
+
+.module-name.selected, .module-name:hover {
+    background: #E7EDEF;
+    color: #999;
+}
+
+/*COMMANDS*/
+.commands-header, .command {
+    display: grid;
+    font-family: "UniNeue", sans-serif;
+    grid-template-columns: 15% 15% 35% 20% 15%;
+}
+
+.commands-header {
+    background: #EBF0F1;
+    color: #4D5D64;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.command {
+    font-size: 1rem;
+}
+
+.command * {
+    border-right: 4px solid #E6E6E6;
+    color: #B3B3B3;
+    padding: 0.8rem 2rem;
+    text-align: center;
+}
+
+.command div:last-child {
+    border-right: 0;
+}
+
+.command:nth-child(odd) {
+    background: #F5F5F5;
+}
+
+.command-name {
+    color: #7ED1F4;
+}
