@@ -121,6 +121,7 @@ a, a:hover, a:active, a:focus {
 }
 .social a {
     display: block;
+    z-index: 1;
 }
 .social:after {
     content: "";

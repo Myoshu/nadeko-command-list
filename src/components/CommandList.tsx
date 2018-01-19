@@ -40,7 +40,7 @@ export default class CommandList extends React.Component<{}, State> {
     getRows(input: string[]): JSX.Element[] {
         const usages: JSX.Element[] = [];
         input.forEach(x => {
-            usages.push(<div className="cell-part">{x}</div>);
+            usages.push(<span className="cell-part">{x}</span>);
         });
         return usages;
     }
@@ -63,13 +63,11 @@ export default class CommandList extends React.Component<{}, State> {
         const cmds: CommandData[] = this.state.data[this.state.selected];
 
         return (
-            <div>
+            <div className="command-list-container">
                 <div className="command-list-header">
                     <div className="cmd-top-part search-wrap">
                         <h2>Search</h2>
-                        <div className="modules">
-                            <input type="text" />
-                        </div>
+                        <input type="text" placeholder="Search for a command"/>
                     </div>
                     <div className="cmd-top-part modules-wrap">
                         <h2>Filter by Module</h2>

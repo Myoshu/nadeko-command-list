@@ -9,24 +9,70 @@
     src: url("../fonts/UniNeueBold.otf");
 }
 
+* {
+    box-sizing: border-box;
+}
+
+#root {
+    background: #F5F5F5;
+}
+
 html {
     font-size: 16px;
+}
+
+.command-list-container {
+    padding: 40px;
+    max-width: 100%;
+    width: 1920px;
+}
+.command-list-header {
+    background: #fff;
+    display: flex;
+    font-family: "UniNeue", sans-serif;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/*SEARCH*/
+.search-wrap {
+    align-items: center;
+    display: flex;
+    width: 48%;
+}
+
+.search-wrap h2 {
+    margin-right: 40px;
+}
+
+.search-wrap input {
+    border: 2px solid #E7EDEF;
+    color: #B3B3B3;
+    font-family: "UniNeue", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    outline-color: #B3B3B3;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.search-wrap input::placeholder {
+    color: #B3B3B3;
 }
 
 /*MODULES*/
 .modules-wrap {
     align-items: center;
     display: flex;
-    padding: 10px 20px;
+    width: 48%;
 }
 
 .modules-wrap h2 {
     align-self: center;
     color: #484848;
-    display: inline-block;
-    font-family: "UniNeue", sans-serif;
     font-weight: 700;
     margin: -10px 40px 0 0;
+    width: 25%;
 }
 
 .modules {
@@ -46,15 +92,19 @@ html {
 }
 
 .module-name.selected, .module-name:hover {
-    background: #E7EDEF;
-    color: #999;
+    background: #EBF0F1;
+    color: #4D5D64;
 }
 
 /*COMMANDS*/
+.commands {
+    background: #fff;
+}
+
 .commands-header, .command {
     display: grid;
     font-family: "UniNeue", sans-serif;
-    grid-template-columns: 15% 15% 35% 20% 15%;
+    grid-template-columns: 12% 15% 35% 23% 15%;
 }
 
 .commands-header {
@@ -70,9 +120,9 @@ html {
     font-size: 1rem;
 }
 
-.command * {
+.command div {
     border-right: 4px solid #E6E6E6;
-    color: #B3B3B3;
+    color: #4D5D64;
     padding: 0.8rem 2rem;
     text-align: center;
 }
@@ -81,10 +131,22 @@ html {
     border-right: 0;
 }
 
+.command strong {
+    display: block;
+}
+
+.command span {
+    display: block;
+}
+
 .command:nth-child(odd) {
     background: #F5F5F5;
 }
 
 .command-name {
-    color: #7ED1F4;
+    color: #7ED1F4 !important;
+}
+
+.description {
+    text-align: justify !important;
 }
